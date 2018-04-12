@@ -1,0 +1,40 @@
+<ion-header>
+  
+    <ion-navbar color="primary">
+      <ion-title>Item</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content>
+  
+    <div margin-vertical class="avatar">
+      <img [src]="item.picture ? item.picture : 'assets/imgs/thumbnail.svg'">
+      <ion-fab top center>
+        <button ion-fab mini color="light" (click)="inputFile.click()">
+          <ion-icon name="ios-camera"></ion-icon>
+        </button>
+        <input hidden #inputFile type="file" (change)="openFileChooser($event)" />
+      </ion-fab>
+    </div>
+  
+    <ion-list no-margin>
+  
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="item.name"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Quantidade</ion-label>
+        <ion-input type="tel" [(ngModel)]="item.size"></ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <div margin-top padding-horizontal>
+      <button ion-button block color="primary" (click)="saveItem(item)">Salvar</button>
+    </div>
+  
+  </ion-content>
+  

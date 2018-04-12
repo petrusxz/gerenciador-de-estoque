@@ -1,0 +1,11 @@
+page-home {
+  div[text-center] {
+    .icon {
+      font-size: 5em;
+    }
+  }
+  ion-spinner {
+    display: block;
+    margin: auto;
+  }
+}
